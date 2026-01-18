@@ -1,0 +1,346 @@
+{
+  "id": "4a24268e-43d8-44ee-8167-975eb9ca2026",
+  "revision": 0,
+  "last_node_id": 46,
+  "last_link_id": 269,
+  "nodes": [
+    {
+      "id": 37,
+      "type": "CheckpointSave",
+      "pos": [
+        3220.6015004744704,
+        626.0885433191779
+      ],
+      "size": [
+        270,
+        98
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 251
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 234
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 235
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "Node name for S&R": "CheckpointSave"
+      },
+      "widgets_values": [
+        "checkpoints/ComfyUI"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "SaveImage",
+      "pos": [
+        3126.6926487604337,
+        209.96152943485262
+      ],
+      "size": [
+        454.8000000000002,
+        372.6
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 250
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        2147.203729334339,
+        165.25390903698047
+      ],
+      "size": [
+        270,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            249
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "4x_fatal_Anime_500000_G.pth"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        2151.7471177266552,
+        264.3270102292503
+      ],
+      "size": [
+        270,
+        98
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            269
+          ]
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            234,
+            247
+          ]
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            235,
+            248
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.2",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "Twoson1.0.safetensors"
+      ]
+    },
+    {
+      "id": 39,
+      "type": "EarthboundAllInOne",
+      "pos": [
+        2435.782411564533,
+        163.08793582920174
+      ],
+      "size": [
+        647.400225512848,
+        890.5887182163162
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 269
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 247
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 248
+        },
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 249
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            250
+          ]
+        },
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            251
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EarthboundAllInOne"
+      },
+      "widgets_values": [
+        "",
+        "",
+        593068250036298,
+        "randomize",
+        1,
+        "Disabled",
+        5,
+        7.5,
+        "euler",
+        "simple",
+        1,
+        "1280x720",
+        2,
+        1,
+        0.2,
+        0.65,
+        1,
+        0.4,
+        0,
+        1.2,
+        1,
+        1,
+        0.3
+      ]
+    }
+  ],
+  "links": [
+    [
+      234,
+      2,
+      1,
+      37,
+      1,
+      "CLIP"
+    ],
+    [
+      235,
+      2,
+      2,
+      37,
+      2,
+      "VAE"
+    ],
+    [
+      247,
+      2,
+      1,
+      39,
+      1,
+      "CLIP"
+    ],
+    [
+      248,
+      2,
+      2,
+      39,
+      2,
+      "VAE"
+    ],
+    [
+      249,
+      8,
+      0,
+      39,
+      3,
+      "UPSCALE_MODEL"
+    ],
+    [
+      250,
+      39,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      251,
+      39,
+      1,
+      37,
+      0,
+      "MODEL"
+    ],
+    [
+      269,
+      2,
+      0,
+      39,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 5,
+      "title": "Save image and model (Ctrl+b to activate node)",
+      "bounding": [
+        3096.6472610193264,
+        132.96246017299197,
+        529.6875678483652,
+        608.1289084683939
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6934334949441494,
+      "offset": [
+        -1595.6656500646836,
+        40.11674902908093
+      ]
+    },
+    "frontendVersion": "1.35.9",
+    "workflowRendererVersion": "LG"
+  },
+  "version": 0.4
+}
