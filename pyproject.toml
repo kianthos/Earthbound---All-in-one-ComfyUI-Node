@@ -29,7 +29,7 @@ Documentation = "https://github.com/kianthos/Earthbound---All-in-one-ComfyUI-Nod
 "Bug Tracker" = "https://github.com/kianthos/Earthbound---All-in-one-ComfyUI-Node/issues"
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "earthboundai"
 DisplayName = "Earthbound---All-in-one-ComfyUI-Node"
 Icon = ""
 includes = [] 
