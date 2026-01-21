@@ -1,0 +1,11 @@
+# --- EARTHBOUND ULTIMATE DEPENDENCIES ---
+# Core Machine Learning & Tensor Math
+torch
+torchvision
+numpy
+
+# Image Processing
+Pillow
+
+# System & Data Handling
+json5
